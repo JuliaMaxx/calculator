@@ -25,14 +25,18 @@ body {
 #calculator-display {
   background-color: rgb(104, 104, 104);
   border-radius: 10px;
-  text-align: right;
   display: flex;
+  flex-direction: column;
   color: rgb(22, 22, 22);
   font-weight: 700;
   font-size: 20px;
-  justify-content:end;
+  justify-content:space-between;
+  align-items: end;
   padding: 20px;
   flex: 1;
+}
+.calculation-result {
+  font-size: 30px;
 }
 #grid {
   background-color: rgb(142, 142, 142);
