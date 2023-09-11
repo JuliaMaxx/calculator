@@ -15,7 +15,7 @@ body {
   border-radius: 20px;
   padding: 30px;
   height: 500px;
-  width: 400px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,20 +34,22 @@ body {
   align-items: end;
   padding: 20px;
   flex: 1;
+  box-shadow: inset 0 0 6px rgb(0, 0, 0);
 }
 .calculation-result {
   font-size: 30px;
 }
 #grid {
-  background-color: rgb(142, 142, 142);
   flex: 4;
-  gap: 3px;
+  gap: 7px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 #grid > button {
   border:unset;
   background-color: rgb(74, 74, 74);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
   font-weight: 700;
   font-size: 20px;
   color: rgb(158, 158, 158);
