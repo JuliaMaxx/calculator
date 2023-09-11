@@ -1,0 +1,10 @@
+#main {
+  height: 97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
