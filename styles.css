@@ -10,19 +10,26 @@ body {
 }
 #calculator-box {
   background-color: aqua;
-  padding: 40px;
+  padding: 30px;
   height: 500px;
   width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: space-between;
+  gap: 10px;
 }
 #calculator-display {
+  background-color: rgb(202, 202, 202);
+  text-align: right;
+  display: flex;
+  align-items: end;
+  justify-content:end;
+  padding: 20px;
   flex: 1;
 }
 #grid {
-  flex: 2;
+  flex: 3;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
