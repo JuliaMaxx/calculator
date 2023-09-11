@@ -1,6 +1,7 @@
 body {
   padding: 15px;
   background-color:rgb(22, 22, 22);
+  font-family: 'Roboto', sans-serif;
 }
 #main {
   height: 92vh;
@@ -26,6 +27,9 @@ body {
   border-radius: 10px;
   text-align: right;
   display: flex;
+  color: rgb(22, 22, 22);
+  font-weight: 700;
+  font-size: 20px;
   justify-content:end;
   padding: 20px;
   flex: 1;
@@ -40,5 +44,7 @@ body {
 #grid > button {
   border:unset;
   background-color: rgb(74, 74, 74);
+  font-weight: 700;
+  font-size: 20px;
   color: rgb(158, 158, 158);
 }
