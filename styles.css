@@ -1,5 +1,6 @@
 body {
   padding: 15px;
+  background-color:rgb(22, 22, 22);
 }
 #main {
   height: 92vh;
@@ -9,7 +10,8 @@ body {
   box-sizing: border-box;
 }
 #calculator-box {
-  background-color: aqua;
+  background-color: rgb(74, 74, 74);
+  border-radius: 20px;
   padding: 30px;
   height: 500px;
   width: 400px;
@@ -17,19 +19,26 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: space-between;
-  gap: 10px;
+  gap: 30px;
 }
 #calculator-display {
-  background-color: rgb(202, 202, 202);
+  background-color: rgb(104, 104, 104);
+  border-radius: 10px;
   text-align: right;
   display: flex;
-  align-items: end;
   justify-content:end;
   padding: 20px;
   flex: 1;
 }
 #grid {
-  flex: 3;
+  background-color: rgb(142, 142, 142);
+  flex: 4;
+  gap: 3px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#grid > button {
+  border:unset;
+  background-color: rgb(74, 74, 74);
+  color: rgb(158, 158, 158);
 }
