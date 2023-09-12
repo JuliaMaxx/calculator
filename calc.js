@@ -58,7 +58,11 @@ function deleteLastDigit() {
 }
 
 function changeDisplay(event){
-  calculationResult.textContent += event.target.innerText;
+  let number =  event.target.innerText;
+  calculationResult.textContent += 
+  number === '.' && +calculationResult.textContent % 1 !== 0?
+  "":
+  number;
   enableOperators();
 }
 
