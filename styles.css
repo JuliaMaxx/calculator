@@ -4,6 +4,7 @@ body {
   background-color: rgb(139, 71, 137);
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  text-align: center;
 }
 
 #main {
@@ -90,4 +91,10 @@ button.operator {
 
 button.delete {
   color: rgb(255, 111, 111)
+}
+
+/* message */
+#message {
+  color: rgb(255, 248, 107);
+  display: none;
 }

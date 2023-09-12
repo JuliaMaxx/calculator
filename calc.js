@@ -7,6 +7,7 @@ const operators = document.querySelectorAll('.operator');
 const equalSign = document.querySelector('.equal');
 const signBtn = document.querySelector('.sign');
 const squareRoot = document.getElementById('square-root');
+const message = document.getElementById('message');
 const maxDigits = 999999999999999;
 let num1 = '';
 let num2 = '';
@@ -46,12 +47,13 @@ function resetValues() {
   num2 = '';
   result = '';
   operator = '';
+  calculation.innerText = '';
+  calculationResult.innerText = '';
   disableOperators();
 }
 
 function clearDisplay() {
-  calculation.innerText = '';
-  calculationResult.innerText = '';
+  message.style.display = 'none';
   resetValues();
 }
 
@@ -61,6 +63,7 @@ function deleteLastDigit() {
 }
 
 function changeDisplay(event){
+  message.style.display = 'none';
   let number =  event.target.dataset.digit;
   if (calculationResult.textContent.length < 18)
   {calculationResult.textContent += 
@@ -75,6 +78,11 @@ function calculateResult(n1, op, n2){
   result = calculator.calculate(`${n1} ${op} ${n2}`);
   result = Math.round(+result * 10**3) / 10**3;
   result = result > maxDigits? maxDigits: result;
+  if(+num2 === 0 && operator === '÷') {
+    result = '';
+    message.style.display = 'block';
+    message.innerText = 'Division by 0 not allowed :(';
+  }
   return result;
 }
 
@@ -109,7 +117,7 @@ function addOperator(event){
       num2 = calculationResult.innerText;
       result = calculateResult(num1, operator, num2);
       calculation.textContent = `${result} ${operator}`;
-      num1 = result;
+      num1 = result === ''? num1: result;
     } else if(num1 === '') {
       num1 = calculationResult.innerText;
     }
@@ -122,14 +130,14 @@ function addOperator(event){
 function calcSquareRoot() {
   const number = calculationResult.innerText;
   let rootedResult = ''
-  if(number !== '' && number !== '.'){
+  if(number !== '' && number > -1 && number !== '.'){
     if (number[0] === '.'){
       rootedResult = (+("0"+number)) ** 0.5;
     }
     rootedResult = (+number) ** 0.5;
     rootedResult = Math.round(+rootedResult * 10**3) / 10**3;
+    calculationResult.innerText = rootedResult; 
   }
-  calculationResult.innerText = rootedResult; 
 }
 
 clearBtn.addEventListener('click', clearDisplay);
