@@ -17,7 +17,8 @@ function Calculator() {
     '-': (a, b) => a - b,
     '+': (a, b) => +a + +b,
     'x': (a, b) => a * b,
-    '÷': (a, b) => a / b
+    '÷': (a, b) => a / b,
+    '^': (a, b) => a ** b
   }
   this.calculate = function(input) {
     const [num1, operator, num2] = input.split(' ');
