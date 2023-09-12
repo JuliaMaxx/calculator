@@ -2,7 +2,8 @@ const clearBtn = document.getElementById('clear');
 const deleteBtn = document.getElementById('delete');
 const calculation = document.querySelector('.calculation');
 const calculationResult = document.querySelector('.calculation-result');
-const calcButtons = document.querySelectorAll('.btn');
+const numberButtons = document.querySelectorAll('.number');
+const operators = document.querySelectorAll('.operator');
 
 function Calculator() {
   this.operators = {
@@ -22,22 +23,46 @@ function Calculator() {
 
 const calculator = new Calculator;
 
+let num1 = '';
+
+let operator = '';
+
+
+function disableOperators(){
+  operators.forEach(op => op.disabled = true);
+}
+
+function enableOperators(){
+  operators.forEach(op => op.disabled = false);
+}
+disableOperators()
+
 function clearDisplay() {
   calculation.innerText = '';
   calculationResult.innerText = '';
+  disableOperators();
 }
 
 function deleteLastDigit() {
-  const text = calculation.innerText
+  const text = calculation.innerText;
   calculation.innerText = text.length > 0? text.slice(0, -1): text;
 }
 
 function changeDisplay(event){
-  calculation.innerText += event.target.innerText;
+  calculation.textContent += event.target.innerText;
+  enableOperators();
+}
+
+function addOperator(event){
+  num1 = calculation.innerText;
+  operator = event.target.innerText;
+  calculation.innerText += ` ${operator} `;
+  disableOperators();
 }
 
 clearBtn.addEventListener('click', clearDisplay);
 deleteBtn.addEventListener('click', deleteLastDigit);
-calcButtons.forEach(btn => btn.addEventListener('click', changeDisplay));
+numberButtons.forEach(btn => btn.addEventListener('click', changeDisplay));
+operators.forEach(op => op.addEventListener('click', addOperator));
 
 
