@@ -4,13 +4,14 @@ const calculation = document.querySelector('.calculation');
 const calculationResult = document.querySelector('.calculation-result');
 const numberButtons = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
+const equalSign = document.querySelectorAll('.equal');
 
 function Calculator() {
   this.operators = {
     '-': (a, b) => a - b,
     '+': (a, b) => +a + +b,
-    '*': (a, b) => a * b,
-    '/': (a, b) => a / b
+    'x': (a, b) => a * b,
+    '÷': (a, b) => a / b
   }
   this.calculate = function(input) {
     const [num1, operator, num2] = input.split(' ');
@@ -24,7 +25,7 @@ function Calculator() {
 const calculator = new Calculator;
 
 let num1 = '';
-
+let result = '';
 let operator = '';
 
 
@@ -40,6 +41,9 @@ disableOperators()
 function clearDisplay() {
   calculation.innerText = '';
   calculationResult.innerText = '';
+  num1 = '';
+  result = '';
+  operator = '';
   disableOperators();
 }
 
@@ -54,9 +58,18 @@ function changeDisplay(event){
 }
 
 function addOperator(event){
-  num1 = calculation.innerText;
-  operator = event.target.innerText;
-  calculation.textContent += `${calculationResult.textContent} ${operator} `;
+  operator = operator? operator: event.target.innerText;
+  if(num1){
+    num2 = calculationResult.innerText;
+    console.log(num1, operator, num2)
+    result = calculator.calculate(`${num1} ${operator} ${num2}`);
+    operator = event.target.innerText;
+    calculation.textContent = `${result} ${operator}`;
+    num1 = result;
+  } else {
+    num1 = calculationResult.innerText;
+    calculation.textContent += `${calculationResult.textContent} ${operator} `;
+  }
   calculationResult.textContent = '';
   disableOperators();
 }
