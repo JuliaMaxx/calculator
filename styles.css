@@ -68,6 +68,10 @@ button {
   transition: all 0.125s;
 }
 
+.number {
+  color:rgb(221, 221, 109)
+}
+
 button:hover {
   box-shadow: none;
 }
@@ -78,7 +82,7 @@ button.operator {
 
 .equal {
   background-color: rgb(91, 135, 74);
-  color: rgb(230, 222, 222);
+  color: rgb(221, 221, 109);
 }
 
 button.delete {
