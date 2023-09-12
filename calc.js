@@ -1,3 +1,8 @@
+const clearBtn = document.getElementById('clear');
+const deleteBtn = document.getElementById('delete');
+const calculation = document.querySelector('.calculation');
+const calculationResult = document.querySelector('.calculation-result');
+
 function Calculator() {
   this.operators = {
     '-': (a, b) => a - b,
@@ -16,4 +21,17 @@ function Calculator() {
 
 const calculator = new Calculator;
 
-console.log(calculator.calculate("-4 / 2"));
+function clearDisplay() {
+  calculation.innerText = '';
+  calculationResult.innerText = '';
+}
+
+function deleteLastDigit() {
+  const text = calculation.innerText
+  calculation.innerText = text.length > 0? text.slice(0, -1): text;
+}
+
+clearBtn.addEventListener('click', clearDisplay);
+deleteBtn.addEventListener('click', deleteLastDigit);
+
+
