@@ -44,19 +44,20 @@ function clearDisplay() {
 }
 
 function deleteLastDigit() {
-  const text = calculation.innerText;
-  calculation.innerText = text.length > 0? text.slice(0, -1): text;
+  const text = calculationResult.innerText;
+  calculationResult.innerText = text.length > 0? text.slice(0, -1): text;
 }
 
 function changeDisplay(event){
-  calculation.textContent += event.target.innerText;
+  calculationResult.textContent += event.target.innerText;
   enableOperators();
 }
 
 function addOperator(event){
   num1 = calculation.innerText;
   operator = event.target.innerText;
-  calculation.innerText += ` ${operator} `;
+  calculation.textContent += `${calculationResult.textContent} ${operator} `;
+  calculationResult.textContent = '';
   disableOperators();
 }
 
