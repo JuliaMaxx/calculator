@@ -5,6 +5,7 @@ const calculationResult = document.querySelector('.calculation-result');
 const numberButtons = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equalSign = document.querySelector('.equal');
+const signBtn = document.querySelector('.sign');
 let num1 = '';
 let num2 = '';
 let result = '';
@@ -73,6 +74,13 @@ function displayResult(){
   }
 }
 
+function changeSign(){
+  const number = calculationResult.innerText
+  if(number !== ''){
+    calculationResult.innerText = -parseInt(number)
+  }
+}
+
 function addOperator(event){
   operator = operator? operator: event.target.innerText;
   if(num1 !== '' && calculationResult.innerText){
@@ -94,5 +102,5 @@ deleteBtn.addEventListener('click', deleteLastDigit);
 numberButtons.forEach(btn => btn.addEventListener('click', changeDisplay));
 operators.forEach(op => op.addEventListener('click', addOperator));
 equalSign.addEventListener('click', displayResult);
-
+signBtn.addEventListener('click', changeSign);
 
