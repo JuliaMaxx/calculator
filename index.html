@@ -20,33 +20,36 @@
       <div id="grid">
         <button id="clear" class="delete">C</button>
         <button id="delete" class="delete">D</button>
-        <button class="operator">x<sup>y</sup></button>
-        <button class="operator">√</button>
-        <button class="other">%</button>
-        <button class="operator">!</button>
-        <button class="operator">log<sub>x</sub><sup>y</sup></button>
-        <button class="btn operator">÷</button>
-        <button class="btn number">7</button>
-        <button class="btn number">8</button>
-        <button class="btn number">9</button>
-        <button class="btn operator">x</button>
-        <button class="btn number">4</button>
-        <button class="btn number">5</button>
-        <button class="btn number">6</button>
-        <button class="btn operator">-</button>
-        <button class="btn number">1</button>
-        <button class="btn number">2</button>
-        <button class="btn number">3</button>
-        <button class="btn operator">+</button>
+        <button data-digit="^" class="operator">
+          x<sup>y</sup>
+        </button>
+        <button data-digit="√" class="operator">√</button>
+        <button data-digit="%" class="other">%</button>
+        <button data-digit="!" class="operator">!</button>
+        <button data-digit="log" class="operator">
+          log<sub>x</sub><sup>y</sup>
+        </button>
+        <button data-digit="÷" class="btn operator">÷</button>
+        <button data-digit="7" class="btn number">7</button>
+        <button data-digit="8" class="btn number">8</button>
+        <button data-digit="9" class="btn number">9</button>
+        <button data-digit="x" class="btn operator">x</button>
+        <button data-digit="4" class="btn number">4</button>
+        <button data-digit="5" class="btn number">5</button>
+        <button data-digit="6" class="btn number">6</button>
+        <button data-digit="-" class="btn operator">-</button>
+        <button data-digit="1" class="btn number">1</button>
+        <button data-digit="2" class="btn number">2</button>
+        <button data-digit="3" class="btn number">3</button>
+        <button data-digit="+" class="btn operator">+</button>
         <button class="sign other">+/-</button>
-        <button class="btn number">0</button>
-        <button class="btn number other">.</button>
+        <button data-digit="0" class="btn number">0</button>
+        <button data-digit="." class="btn number other">.</button>
         <button class="equal">=</button>
-        <button class="other">ln</button>
-        <button class="other">π</button>
-        <button class="other">e</button>
+        <button data-digit="3.14159" class="other number">π</button>
+        <button data-digit="2.71828" class="other number">e</button>
+        <button data-digit="ln" class="operator">ln</button>
         <button class="other">H</button>
-
       </div>
     </div>
   </div>

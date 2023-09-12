@@ -64,12 +64,15 @@ button {
   border-radius: 10px;
   font-weight: 700;
   font-size: 25px;
-  color: rgb(132, 183, 201);
   transition: all 0.125s;
 }
 
 .number {
   color:rgb(221, 221, 109)
+}
+
+.other {
+  color: rgb(132, 183, 201);
 }
 
 button:hover {

@@ -6,11 +6,11 @@ const numberButtons = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equalSign = document.querySelector('.equal');
 const signBtn = document.querySelector('.sign');
+const maxDigits = 999999999999999;
 let num1 = '';
 let num2 = '';
 let result = '';
 let operator = '';
-const maxDigits = 999999999999999;
 
 function Calculator() {
   this.operators = {
@@ -60,7 +60,7 @@ function deleteLastDigit() {
 }
 
 function changeDisplay(event){
-  let number =  event.target.innerText;
+  let number =  event.target.dataset.digit;
   if (calculationResult.textContent.length < 18)
   {calculationResult.textContent += 
   number === '.' && +calculationResult.textContent % 1 !== 0?
@@ -100,7 +100,7 @@ function changeSign(){
 
 function addOperator(event){
   if (calculation.textContent !== "" || calculationResult.innerText !== "" ){ 
-    operator = operator? operator: event.target.innerText;
+    operator = operator? operator: event.target.dataset.digit;
     if(num1 !== '' && calculationResult.innerText !== ""){
       num2 = calculationResult.innerText;
       result = calculateResult(num1, operator, num2);
@@ -109,7 +109,7 @@ function addOperator(event){
     } else if(num1 === '') {
       num1 = calculationResult.innerText;
     }
-    operator = event.target.innerText;
+    operator = event.target.dataset.digit;
     calculation.textContent = `${num1} ${operator} `;
     calculationResult.textContent = '';
   }
