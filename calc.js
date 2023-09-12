@@ -62,11 +62,16 @@ function changeDisplay(event){
   enableOperators();
 }
 
+function calculateResult(n1, op, n2){
+  result = calculator.calculate(`${n1} ${op} ${n2}`);
+  result = Math.round(+result * 10**8) / 10**8;
+  return result;
+}
+
 function displayResult(){
   if (num1 !== '' && operator){
     num2 = calculationResult.innerText;
-    console.log(num1, operator, num2)
-    result = calculator.calculate(`${num1} ${operator} ${num2}`);
+    result = calculateResult(num1, operator, num2);
     calculationResult.textContent = result;
     num1 = '';
     operator = '';
@@ -85,8 +90,7 @@ function addOperator(event){
   operator = operator? operator: event.target.innerText;
   if(num1 !== '' && calculationResult.innerText){
     num2 = calculationResult.innerText;
-    console.log(num1, operator, num2)
-    result = calculator.calculate(`${num1} ${operator} ${num2}`);
+    result = calculateResult(num1, operator, num2);
     calculation.textContent = `${result} ${operator}`;
     num1 = result;
   } else if(num1 === '') {
