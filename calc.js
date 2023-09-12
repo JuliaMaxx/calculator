@@ -2,6 +2,7 @@ const clearBtn = document.getElementById('clear');
 const deleteBtn = document.getElementById('delete');
 const calculation = document.querySelector('.calculation');
 const calculationResult = document.querySelector('.calculation-result');
+const calcButtons = document.querySelectorAll('.btn');
 
 function Calculator() {
   this.operators = {
@@ -31,7 +32,12 @@ function deleteLastDigit() {
   calculation.innerText = text.length > 0? text.slice(0, -1): text;
 }
 
+function changeDisplay(event){
+  calculation.innerText += event.target.innerText;
+}
+
 clearBtn.addEventListener('click', clearDisplay);
 deleteBtn.addEventListener('click', deleteLastDigit);
+calcButtons.forEach(btn => btn.addEventListener('click', changeDisplay));
 
 
