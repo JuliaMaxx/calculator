@@ -84,7 +84,7 @@ function displayResult(){
     calculationResult.textContent = result;
     num1 = '';
     operator = '';
-    calculation.textContent += num2;
+    calculation.textContent += num2 + ' =';
   }
 }
 
@@ -99,7 +99,10 @@ function changeSign(){
 }
 
 function addOperator(event){
-  if (calculation.textContent !== "" || calculationResult.innerText !== "" ){ 
+  if (calculation.textContent !== "" &&
+   !calculation.textContent.includes('=')||
+   calculationResult.innerText !== "" 
+   ){ 
     operator = operator? operator: event.target.dataset.digit;
     if(num1 !== '' && calculationResult.innerText !== ""){
       num2 = calculationResult.innerText;
