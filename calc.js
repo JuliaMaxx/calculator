@@ -5,6 +5,10 @@ const calculationResult = document.querySelector('.calculation-result');
 const numberButtons = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equalSign = document.querySelector('.equal');
+let num1 = '';
+let num2 = '';
+let result = '';
+let operator = '';
 
 function Calculator() {
   this.operators = {
@@ -24,11 +28,6 @@ function Calculator() {
 
 const calculator = new Calculator;
 
-let num1 = '';
-let result = '';
-let operator = '';
-
-
 function disableOperators(){
   operators.forEach(op => op.disabled = true);
 }
@@ -36,15 +35,20 @@ function disableOperators(){
 function enableOperators(){
   operators.forEach(op => op.disabled = false);
 }
-disableOperators()
+disableOperators();
+
+function resetValues() {
+  num1 = '';
+  num2 = '';
+  result = '';
+  operator = '';
+  disableOperators();
+}
 
 function clearDisplay() {
   calculation.innerText = '';
   calculationResult.innerText = '';
-  num1 = '';
-  result = '';
-  operator = '';
-  disableOperators();
+  resetValues();
 }
 
 function deleteLastDigit() {
@@ -58,7 +62,7 @@ function changeDisplay(event){
 }
 
 function displayResult(){
-  if (num1 && operator){
+  if (num1 !== '' && operator){
     num2 = calculationResult.innerText;
     console.log(num1, operator, num2)
     result = calculator.calculate(`${num1} ${operator} ${num2}`);
@@ -71,19 +75,18 @@ function displayResult(){
 
 function addOperator(event){
   operator = operator? operator: event.target.innerText;
-  if(num1){
+  if(num1 !== '' && calculationResult.innerText){
     num2 = calculationResult.innerText;
     console.log(num1, operator, num2)
     result = calculator.calculate(`${num1} ${operator} ${num2}`);
-    operator = event.target.innerText;
     calculation.textContent = `${result} ${operator}`;
     num1 = result;
-  } else {
+  } else if(num1 === '') {
     num1 = calculationResult.innerText;
-    calculation.textContent += `${calculationResult.textContent} ${operator} `;
   }
+  operator = event.target.innerText;
+  calculation.textContent = `${num1} ${operator} `;
   calculationResult.textContent = '';
-  disableOperators();
 }
 
 clearBtn.addEventListener('click', clearDisplay);
