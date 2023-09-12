@@ -4,7 +4,7 @@ const calculation = document.querySelector('.calculation');
 const calculationResult = document.querySelector('.calculation-result');
 const numberButtons = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
-const equalSign = document.querySelectorAll('.equal');
+const equalSign = document.querySelector('.equal');
 
 function Calculator() {
   this.operators = {
@@ -57,6 +57,18 @@ function changeDisplay(event){
   enableOperators();
 }
 
+function displayResult(){
+  if (num1 && operator){
+    num2 = calculationResult.innerText;
+    console.log(num1, operator, num2)
+    result = calculator.calculate(`${num1} ${operator} ${num2}`);
+    calculationResult.textContent = result;
+    num1 = '';
+    operator = '';
+    calculation.textContent = '';
+  }
+}
+
 function addOperator(event){
   operator = operator? operator: event.target.innerText;
   if(num1){
@@ -78,5 +90,6 @@ clearBtn.addEventListener('click', clearDisplay);
 deleteBtn.addEventListener('click', deleteLastDigit);
 numberButtons.forEach(btn => btn.addEventListener('click', changeDisplay));
 operators.forEach(op => op.addEventListener('click', addOperator));
+equalSign.addEventListener('click', displayResult);
 
 
