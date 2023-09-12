@@ -65,6 +65,9 @@ function deleteLastDigit() {
 function changeDisplay(event){
   message.style.display = 'none';
   let number =  event.target.dataset.digit;
+  if (calculation.textContent.includes('=')){
+    calculation.innerText = '';
+  }
   if (calculationResult.textContent.length < 18)
   {calculationResult.textContent += 
   number === '.' && +calculationResult.textContent % 1 !== 0?
