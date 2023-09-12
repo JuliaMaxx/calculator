@@ -6,6 +6,7 @@ const numberButtons = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equalSign = document.querySelector('.equal');
 const signBtn = document.querySelector('.sign');
+const squareRoot = document.getElementById('square-root');
 const maxDigits = 999999999999999;
 let num1 = '';
 let num2 = '';
@@ -118,10 +119,24 @@ function addOperator(event){
   }
 }
 
+function calcSquareRoot() {
+  const number = calculationResult.innerText;
+  let rootedResult = ''
+  if(number !== '' && number !== '.'){
+    if (number[0] === '.'){
+      rootedResult = (+("0"+number)) ** 0.5;
+    }
+    rootedResult = (+number) ** 0.5;
+    rootedResult = Math.round(+rootedResult * 10**3) / 10**3;
+  }
+  calculationResult.innerText = rootedResult; 
+}
+
 clearBtn.addEventListener('click', clearDisplay);
 deleteBtn.addEventListener('click', deleteLastDigit);
 numberButtons.forEach(btn => btn.addEventListener('click', changeDisplay));
 operators.forEach(op => op.addEventListener('click', addOperator));
 equalSign.addEventListener('click', displayResult);
 signBtn.addEventListener('click', changeSign);
+squareRoot.addEventListener('click', calcSquareRoot);
 
