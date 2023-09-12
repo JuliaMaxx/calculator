@@ -10,6 +10,7 @@ let num1 = '';
 let num2 = '';
 let result = '';
 let operator = '';
+const maxDigits = 999999999999999;
 
 function Calculator() {
   this.operators = {
@@ -59,16 +60,19 @@ function deleteLastDigit() {
 
 function changeDisplay(event){
   let number =  event.target.innerText;
-  calculationResult.textContent += 
+  if (calculationResult.textContent.length < 18)
+  {calculationResult.textContent += 
   number === '.' && +calculationResult.textContent % 1 !== 0?
   "":
   number;
+  }
   enableOperators();
 }
 
 function calculateResult(n1, op, n2){
   result = calculator.calculate(`${n1} ${op} ${n2}`);
-  result = Math.round(+result * 10**8) / 10**8;
+  result = Math.round(+result * 10**3) / 10**3;
+  result = result > maxDigits? maxDigits: result;
   return result;
 }
 
