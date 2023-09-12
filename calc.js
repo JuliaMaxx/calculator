@@ -81,8 +81,11 @@ function displayResult(){
 
 function changeSign(){
   const number = calculationResult.innerText
-  if(number !== ''){
-    calculationResult.innerText = -parseInt(number)
+  if(number !== '' && number !== '.'){
+    if (number[0] === '.'){
+      calculationResult.innerText = -(+("0"+number))
+    }
+    calculationResult.innerText = -(+number)
   }
 }
 
