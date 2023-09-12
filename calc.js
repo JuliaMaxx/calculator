@@ -94,18 +94,20 @@ function changeSign(){
 }
 
 function addOperator(event){
-  operator = operator? operator: event.target.innerText;
-  if(num1 !== '' && calculationResult.innerText){
-    num2 = calculationResult.innerText;
-    result = calculateResult(num1, operator, num2);
-    calculation.textContent = `${result} ${operator}`;
-    num1 = result;
-  } else if(num1 === '') {
-    num1 = calculationResult.innerText;
+  if (calculation.textContent !== "" || calculationResult.innerText !== "" ){ 
+    operator = operator? operator: event.target.innerText;
+    if(num1 !== '' && calculationResult.innerText !== ""){
+      num2 = calculationResult.innerText;
+      result = calculateResult(num1, operator, num2);
+      calculation.textContent = `${result} ${operator}`;
+      num1 = result;
+    } else if(num1 === '') {
+      num1 = calculationResult.innerText;
+    }
+    operator = event.target.innerText;
+    calculation.textContent = `${num1} ${operator} `;
+    calculationResult.textContent = '';
   }
-  operator = event.target.innerText;
-  calculation.textContent = `${num1} ${operator} `;
-  calculationResult.textContent = '';
 }
 
 clearBtn.addEventListener('click', clearDisplay);
