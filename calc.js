@@ -84,7 +84,7 @@ function displayResult(){
     calculationResult.textContent = result;
     num1 = '';
     operator = '';
-    calculation.textContent = '';
+    calculation.textContent += num2;
   }
 }
 
