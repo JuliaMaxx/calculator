@@ -58,6 +58,13 @@ function clearDisplay() {
   resetValues();
 }
 
+function displayMessage(msg) {
+  result = '';
+  message.style.display = "block";
+  message.innerText = msg;
+
+}
+
 function deleteLastDigit() {
   const text = currentNumber.innerText;
   currentNumber.innerText = text.length > 0 ? text.slice(0, -1) : text;
@@ -69,7 +76,7 @@ function changeDisplay(event) {
   if (calculation.textContent.includes("=")) {
     calculation.innerText = "";
   }
-  if (currentNumber.textContent.length < 18) {
+  if (currentNumber.textContent.length < 17) {
     currentNumber.textContent +=
       number === "." && +currentNumber.textContent % 1 !== 0 ? "" : number;
   }
@@ -79,11 +86,11 @@ function changeDisplay(event) {
 function calculateResult(num1, operator, num2) {
   result = calculator.calculate(`${num1} ${operator} ${num2}`);
   result = Math.round(+result * 10 ** 3) / 10 ** 3;
-  result = result > maxDigits ? maxDigits : result;
+  if (result > maxDigits) {
+    displayMessage( 'Number too big');
+  }
   if (+num2 === 0 && operator === "÷") {
-    result = "";
-    message.style.display = "block";
-    message.innerText = "Division by 0 not allowed :(";
+    displayMessage('Division by 0 not allowed :(');
   }
   return result;
 }
@@ -132,8 +139,12 @@ function addOperator(event) {
 
 function calcSquareRoot() {
   const number = currentNumber.innerText;
+  if (number < 0) {
+    displayMessage('cannot calculate sqrt of negative number');
+    return;
+  }
   let rootedResult = "";
-  if (number !== "" && number > -1 && number !== ".") {
+  if (number !== "" && number !== ".") {
     if (number[0] === ".") {
       rootedResult = (+("0" + number)) ** 0.5;
     }
