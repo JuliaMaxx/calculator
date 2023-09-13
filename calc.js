@@ -9,6 +9,7 @@ const signBtn = document.querySelector(".sign");
 const squareRoot = document.getElementById("square-root");
 const message = document.getElementById("message");
 const maxDigits = 999999999999999;
+const minDigits = -999999999999999;
 let num1 = "";
 let num2 = "";
 let result = "";
@@ -76,7 +77,7 @@ function changeDisplay(event) {
   if (calculation.textContent.includes("=")) {
     calculation.innerText = "";
   }
-  if (currentNumber.textContent.length < 17) {
+  if (currentNumber.textContent.length < 15) {
     currentNumber.textContent +=
       number === "." && +currentNumber.textContent % 1 !== 0 ? "" : number;
   }
@@ -86,8 +87,8 @@ function changeDisplay(event) {
 function calculateResult(num1, operator, num2) {
   result = calculator.calculate(`${num1} ${operator} ${num2}`);
   result = Math.round(+result * 10 ** 3) / 10 ** 3;
-  if (result > maxDigits) {
-    displayMessage( 'Number too big');
+  if (result > maxDigits || result < minDigits) {
+    displayMessage( 'Number too long');
   }
   if (+num2 === 0 && operator === "÷") {
     displayMessage('Division by 0 not allowed :(');
@@ -107,12 +108,12 @@ function displayResult() {
 }
 
 function changeSign() {
-  const number = currentNumber.innerText;
+  const number = +currentNumber.innerText;
   if (number !== "" && number !== ".") {
     if (number[0] === ".") {
-      currentNumber.innerText = -+("0" + number);
+      currentNumber.innerText = -(+("0" + number));
     }
-    currentNumber.innerText = -+number;
+    currentNumber.innerText = -number;
   }
 }
 
