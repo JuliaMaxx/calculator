@@ -108,7 +108,7 @@ function calculateResult(num1, operator, num2) {
 }
 
 function displayResult() {
-  if (num1 !== "" && operator) {
+  if (num1 !== "" && operator && currentNumber.innerText !== '') {
     num2 = currentNumber.innerText;
     result = calculateResult(num1, operator, num2);
     currentNumber.textContent = result;
