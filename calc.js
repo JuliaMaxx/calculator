@@ -78,8 +78,19 @@ function changeDisplay(event) {
     calculation.innerText = "";
   }
   if (currentNumber.textContent.length < 15) {
-    currentNumber.textContent +=
-      number === "." && +currentNumber.textContent % 1 !== 0 ? "" : number;
+    if (
+      (number === "." ||
+      number === '3.14159' ||
+      number == '2.71828')
+      && currentNumber.textContent.includes('.')
+      ){
+        currentNumber.textContent += '';
+        displayMessage('cannot have two dots in number');
+
+    }
+    else {
+      currentNumber.textContent += number;
+    }
   }
   enableOperators();
 }
