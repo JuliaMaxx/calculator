@@ -1,7 +1,7 @@
 const clearBtn = document.getElementById('clear');
 const deleteBtn = document.getElementById('delete');
 const calculation = document.querySelector('.calculation');
-const calculationResult = document.querySelector('.calculation-result');
+const currentNumber = document.querySelector('.current-number');
 const numberButtons = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equalSign = document.querySelector('.equal');
@@ -40,6 +40,7 @@ function disableOperators(){
 function enableOperators(){
   operators.forEach(op => op.disabled = false);
 }
+
 disableOperators();
 
 function resetValues() {
@@ -48,7 +49,7 @@ function resetValues() {
   result = '';
   operator = '';
   calculation.innerText = '';
-  calculationResult.innerText = '';
+  currentNumber.innerText = '';
   disableOperators();
 }
 
@@ -58,8 +59,8 @@ function clearDisplay() {
 }
 
 function deleteLastDigit() {
-  const text = calculationResult.innerText;
-  calculationResult.innerText = text.length > 0? text.slice(0, -1): text;
+  const text = currentNumber.innerText;
+  currentNumber.innerText = text.length > 0? text.slice(0, -1): text;
 }
 
 function changeDisplay(event){
@@ -68,9 +69,9 @@ function changeDisplay(event){
   if (calculation.textContent.includes('=')){
     calculation.innerText = '';
   }
-  if (calculationResult.textContent.length < 18)
-  {calculationResult.textContent += 
-  number === '.' && +calculationResult.textContent % 1 !== 0?
+  if (currentNumber.textContent.length < 18)
+  {currentNumber.textContent += 
+  number === '.' && +currentNumber.textContent % 1 !== 0?
   "":
   number;
   }
@@ -91,9 +92,9 @@ function calculateResult(n1, op, n2){
 
 function displayResult(){
   if (num1 !== '' && operator){
-    num2 = calculationResult.innerText;
+    num2 = currentNumber.innerText;
     result = calculateResult(num1, operator, num2);
-    calculationResult.textContent = result;
+    currentNumber.textContent = result;
     num1 = '';
     operator = '';
     calculation.textContent += num2 + ' =';
@@ -101,37 +102,37 @@ function displayResult(){
 }
 
 function changeSign(){
-  const number = calculationResult.innerText
+  const number = currentNumber.innerText
   if(number !== '' && number !== '.'){
     if (number[0] === '.'){
-      calculationResult.innerText = -(+("0"+number))
+      currentNumber.innerText = -(+("0"+number))
     }
-    calculationResult.innerText = -(+number)
+    currentNumber.innerText = -(+number)
   }
 }
 
 function addOperator(event){
   if (calculation.textContent !== "" &&
    !calculation.textContent.includes('=')||
-   calculationResult.innerText !== "" 
+   currentNumber.innerText !== "" 
    ){ 
     operator = operator? operator: event.target.dataset.digit;
-    if(num1 !== '' && calculationResult.innerText !== ""){
-      num2 = calculationResult.innerText;
+    if(num1 !== '' && currentNumber.innerText !== ""){
+      num2 = currentNumber.innerText;
       result = calculateResult(num1, operator, num2);
       calculation.textContent = `${result} ${operator}`;
       num1 = result === ''? num1: result;
     } else if(num1 === '') {
-      num1 = calculationResult.innerText;
+      num1 = currentNumber.innerText;
     }
     operator = event.target.dataset.digit;
     calculation.textContent = `${num1} ${operator} `;
-    calculationResult.textContent = '';
+    currentNumber.textContent = '';
   }
 }
 
 function calcSquareRoot() {
-  const number = calculationResult.innerText;
+  const number = currentNumber.innerText;
   let rootedResult = ''
   if(number !== '' && number > -1 && number !== '.'){
     if (number[0] === '.'){
@@ -139,7 +140,7 @@ function calcSquareRoot() {
     }
     rootedResult = (+number) ** 0.5;
     rootedResult = Math.round(+rootedResult * 10**3) / 10**3;
-    calculationResult.innerText = rootedResult; 
+    currentNumber.innerText = rootedResult; 
   }
 }
 
