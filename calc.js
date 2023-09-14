@@ -7,6 +7,7 @@ const operators = document.querySelectorAll(".operator");
 const equalSign = document.querySelector(".equal");
 const signBtn = document.querySelector(".sign");
 const squareRoot = document.getElementById("square-root");
+const factorial = document.getElementById("factorial");
 const message = document.getElementById("message");
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
@@ -166,6 +167,24 @@ function calcSquareRoot() {
   }
 }
 
+function calcFactorial() {
+  const number = +currentNumber.innerText;
+  if (number < 0) {
+    displayMessage('cannot calculate factorial of negative number');
+    return;
+  }
+  if (number > 17) {
+    displayMessage('number too long')
+    return;
+  }
+  let factResult = 1;
+  for (let i = 2; i <= number; i++) {
+    factResult *= i;
+  }
+  
+  currentNumber.innerText = factResult;
+}
+
 clearBtn.addEventListener("click", clearDisplay);
 deleteBtn.addEventListener("click", deleteLastDigit);
 numberButtons.forEach((btn) => btn.addEventListener("click", changeDisplay));
@@ -173,3 +192,4 @@ operators.forEach((op) => op.addEventListener("click", addOperator));
 equalSign.addEventListener("click", displayResult);
 signBtn.addEventListener("click", changeSign);
 squareRoot.addEventListener("click", calcSquareRoot);
+factorial.addEventListener("click", calcFactorial);
