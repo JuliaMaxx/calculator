@@ -130,6 +130,7 @@ function changeSign() {
 }
 
 function addOperator(event) {
+  message.style.display = 'none';
   if (
     (calculation.textContent !== "" &&
       !calculation.textContent.includes("=")) ||
