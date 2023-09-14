@@ -10,6 +10,7 @@ const squareRoot = document.getElementById("square-root");
 const factorial = document.getElementById("factorial");
 const logarithm = document.getElementById("logarithm");
 const message = document.getElementById("message");
+const buttons = document.querySelectorAll('button');
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
 let num1 = "";
@@ -57,7 +58,6 @@ function resetValues() {
 }
 
 function clearDisplay() {
-  message.style.display = "none";
   resetValues();
 }
 
@@ -74,7 +74,6 @@ function deleteLastDigit() {
 }
 
 function changeDisplay(event) {
-  message.style.display = "none";
   let number = event.target.dataset.digit;
   if (calculation.textContent.includes("=")) {
     calculation.innerText = "";
@@ -130,8 +129,11 @@ function changeSign() {
   }
 }
 
-function addOperator(event) {
+function clearMessage() {
   message.style.display = 'none';
+}
+
+function addOperator(event) {
   if (
     (calculation.textContent !== "" &&
       !calculation.textContent.includes("=")) ||
@@ -197,6 +199,7 @@ function calcLog() {
   currentNumber.innerText = Math.round(logResult * 10 ** 3) / 10 ** 3
 }
 
+buttons.forEach(button => button.addEventListener('click', clearMessage));
 clearBtn.addEventListener("click", clearDisplay);
 deleteBtn.addEventListener("click", deleteLastDigit);
 numberButtons.forEach((btn) => btn.addEventListener("click", changeDisplay));
