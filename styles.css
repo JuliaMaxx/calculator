@@ -98,3 +98,13 @@ button.delete {
   color: rgb(255, 248, 107);
   display: none;
 }
+
+/* icons */
+.with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.history > img, .delete > img {
+  width: 30px;
+}
