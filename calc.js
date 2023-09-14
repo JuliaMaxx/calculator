@@ -121,8 +121,9 @@ function displayResult() {
 }
 
 function changeSign() {
-  const number = +currentNumber.innerText;
+  let number = currentNumber.innerText;
   if (number !== "" && number !== ".") {
+    number = +number;
     if (number[0] === ".") {
       currentNumber.innerText = -(+("0" + number));
     }
@@ -173,41 +174,51 @@ function calcSquareRoot() {
 }
 
 function calcFactorial() {
-  const number = +currentNumber.innerText;
-  if (number < 0) {
-    displayMessage('cannot calculate factorial of negative number');
-    return;
+  let number = currentNumber.innerText;
+  if (number !== "" && number !== ".") {
+    number = +number;
+    if (number < 0) {
+      displayMessage('cannot calculate factorial of negative number');
+      return;
+    }
+    if (number > 17) {
+      displayMessage('number too long')
+      return;
+    }
+    let factResult = 1;
+    for (let i = 2; i <= number; i++) {
+      factResult *= i;
+    }
+    
+    currentNumber.innerText = factResult;
   }
-  if (number > 17) {
-    displayMessage('number too long')
-    return;
-  }
-  let factResult = 1;
-  for (let i = 2; i <= number; i++) {
-    factResult *= i;
-  }
-  
-  currentNumber.innerText = factResult;
 }
 
 function calcLog() {
-  const number = +currentNumber.innerText;
-  if (number <= 0) {
-    displayMessage('cannot calculate log of negative number');
-    return;
+  let number = currentNumber.innerText;
+  if (number !== "" && number !== ".") {
+    number = +number;
+    if (number <= 0) {
+      displayMessage('cannot calculate log of negative number');
+      return;
+    }
+    let logResult = Math.log(number) / Math.log(10);
+    currentNumber.innerText = Math.round(logResult * 10 ** 3) / 10 ** 3;
   }
-  let logResult = Math.log(number) / Math.log(10);
-  currentNumber.innerText = Math.round(logResult * 10 ** 3) / 10 ** 3
 }
 
 function calcNatLog() {
-  const number = +currentNumber.innerText;
-  if (number <= 0) {
-    displayMessage('cannot calculate log of negative number');
-    return;
+  let number = currentNumber.innerText;
+  if (number !== "" && number !== ".") {
+    number = +number;
+    if (number <= 0) {
+      displayMessage('cannot calculate log of negative number');
+      return;
+    }
+    
+    let logResult = Math.log(number);
+    currentNumber.innerText = Math.round(logResult * 10 ** 3) / 10 ** 3;
   }
-  let logResult = Math.log(number);
-  currentNumber.innerText = Math.round(logResult * 10 ** 3) / 10 ** 3
 }
 
 buttons.forEach(button => button.addEventListener('click', clearMessage));
