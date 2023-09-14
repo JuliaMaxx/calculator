@@ -8,6 +8,7 @@ const equalSign = document.querySelector(".equal");
 const signBtn = document.querySelector(".sign");
 const squareRoot = document.getElementById("square-root");
 const factorial = document.getElementById("factorial");
+const logarithm = document.getElementById("logarithm");
 const message = document.getElementById("message");
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
@@ -20,7 +21,7 @@ function Calculator() {
   this.operators = {
     "-": (a, b) => a - b,
     "+": (a, b) => +a + +b,
-    x: (a, b) => a * b,
+    "x": (a, b) => a * b,
     "÷": (a, b) => a / b,
     "^": (a, b) => a ** b,
   };
@@ -186,6 +187,16 @@ function calcFactorial() {
   currentNumber.innerText = factResult;
 }
 
+function calcLog() {
+  const number = +currentNumber.innerText;
+  if (number <= 0) {
+    displayMessage('cannot calculate log of negative number');
+    return;
+  }
+  let logResult = Math.log(number) / Math.log(10);
+  currentNumber.innerText = Math.round(logResult * 10 ** 3) / 10 ** 3
+}
+
 clearBtn.addEventListener("click", clearDisplay);
 deleteBtn.addEventListener("click", deleteLastDigit);
 numberButtons.forEach((btn) => btn.addEventListener("click", changeDisplay));
@@ -194,3 +205,4 @@ equalSign.addEventListener("click", displayResult);
 signBtn.addEventListener("click", changeSign);
 squareRoot.addEventListener("click", calcSquareRoot);
 factorial.addEventListener("click", calcFactorial);
+logarithm.addEventListener("click", calcLog);
