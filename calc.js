@@ -12,6 +12,7 @@ const logarithm = document.getElementById("logarithm");
 const naturalLogarithm = document.getElementById("natural-logarithm");
 const message = document.getElementById("message");
 const buttons = document.querySelectorAll('button');
+const percent = document.getElementById('percent');
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
 let num1 = "";
@@ -221,6 +222,19 @@ function calcNatLog() {
   }
 }
 
+function calcPercent() {
+  let number = currentNumber.innerText;
+  if (number !== "" && number !== ".") {
+    number = +number;
+    if (num1 && (operator === '+' || operator === '-')){
+      currentNumber.innerText = num1*number/100
+    }
+    else{
+      currentNumber.innerText = number/100
+    }
+  }
+}
+ 
 buttons.forEach(button => button.addEventListener('click', clearMessage));
 clearBtn.addEventListener("click", clearDisplay);
 deleteBtn.addEventListener("click", deleteLastDigit);
@@ -232,3 +246,4 @@ squareRoot.addEventListener("click", calcSquareRoot);
 factorial.addEventListener("click", calcFactorial);
 logarithm.addEventListener("click", calcLog);
 naturalLogarithm.addEventListener("click", calcNatLog);
+percent.addEventListener('click', calcPercent);
