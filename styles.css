@@ -39,10 +39,22 @@ body {
   padding: 20px;
   background-color: rgba(156, 101, 151, 1);
 }
-#close-history {
+#close-history{
   color:rgb(255, 111, 111);
   font-size: 20px;
   padding: 3px 9px;
+}
+.history-buttons {
+  display: flex;
+  gap: 10px;
+}
+#delete-history {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#delete-history > img {
+  width: 20px;
 }
 .history-heading {
   color: rgb(194, 194, 194);
