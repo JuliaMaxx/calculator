@@ -17,6 +17,7 @@ const history = document.querySelector('.history');
 const historyBox = document.getElementById('history-box');
 const calculatorBox = document.getElementById('calculator-box');
 const closeHistoryBtn = document.getElementById('close-history');
+const historyMain = document.querySelector('.history-main');
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
 let num1 = "";
@@ -242,10 +243,13 @@ function calcPercent() {
 function showHistory() {
   historyBox.style.visibility = 'visible';
   historyBox.style.height = '100%';
+  historyMain.style.opacity = 1;
 }
 function closeHistory () {
   historyBox.style.height = '0';
   historyBox.style.visibility = 'hidden';
+  historyMain.style.opacity = 0;
+
 }
  
 buttons.forEach(button => button.addEventListener('click', clearMessage));
