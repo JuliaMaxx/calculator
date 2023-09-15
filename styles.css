@@ -23,10 +23,24 @@ body {
   height: 500px;
   width: 350px;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   align-items: space-between;
   gap: 30px;
+}
+
+#history-box {
+  transition: all 0.5s;
+  position: absolute;
+  top: 0px;
+  padding: 30px 20px;
+  align-self: center;
+  width: 350px;
+  border-radius: 20px;
+  visibility: hidden;
+  height: 0;
+  background-color: rgba(156, 101, 151, 0.804);
 }
 
 /* display */
