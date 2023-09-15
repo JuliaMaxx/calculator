@@ -16,6 +16,7 @@ const percent = document.getElementById('percent');
 const history = document.querySelector('.history');
 const historyBox = document.getElementById('history-box');
 const calculatorBox = document.getElementById('calculator-box');
+const closeHistoryBtn = document.getElementById('close-history');
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
 let num1 = "";
@@ -240,7 +241,11 @@ function calcPercent() {
 
 function showHistory() {
   historyBox.style.visibility = 'visible';
-  historyBox.style.height = '500px';
+  historyBox.style.height = '100%';
+}
+function closeHistory () {
+  historyBox.style.height = '0';
+  historyBox.style.visibility = 'hidden';
 }
  
 buttons.forEach(button => button.addEventListener('click', clearMessage));
@@ -256,3 +261,4 @@ logarithm.addEventListener("click", calcLog);
 naturalLogarithm.addEventListener("click", calcNatLog);
 percent.addEventListener('click', calcPercent);
 history.addEventListener('click', showHistory)
+closeHistoryBtn.addEventListener('click', closeHistory)
