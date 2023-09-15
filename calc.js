@@ -17,6 +17,7 @@ const history = document.querySelector('.history');
 const historyBox = document.getElementById('history-box');
 const calculatorBox = document.getElementById('calculator-box');
 const closeHistoryBtn = document.getElementById('close-history');
+const deleteHistoryBtn = document.getElementById('delete-history');
 const historyMain = document.querySelector('.history-main');
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
@@ -257,6 +258,14 @@ function closeHistory () {
   historyMain.style.opacity = 0;
 
 }
+
+function deleteHistory() {
+  historyMain.style.opacity = 0;
+  setTimeout(() => {
+    historyMain.innerHTML = '';
+    historyMain.style.opacity = 1;
+  }, 600);
+}
  
 buttons.forEach(button => button.addEventListener('click', clearMessage));
 clearBtn.addEventListener("click", clearDisplay);
@@ -271,4 +280,5 @@ logarithm.addEventListener("click", calcLog);
 naturalLogarithm.addEventListener("click", calcNatLog);
 percent.addEventListener('click', calcPercent);
 history.addEventListener('click', showHistory)
-closeHistoryBtn.addEventListener('click', closeHistory)
+closeHistoryBtn.addEventListener('click', closeHistory);
+deleteHistoryBtn.addEventListener('click', deleteHistory);

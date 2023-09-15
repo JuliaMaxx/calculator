@@ -88,8 +88,7 @@ hr {
   height: 400px;
   gap: 15px;
   overflow: auto;
-  transition: all 0.7s;
-
+  transition: all 0.6s;
 }
 .history-main::-webkit-scrollbar {
   width: 10px;
@@ -101,8 +100,6 @@ hr {
   background-color: rgb(194, 194, 194);
   border-radius: 6px;
 }
-
-
 
 /* display */
 #calculator-display {
