@@ -1,6 +1,6 @@
 /* general */
 body {
-  padding: 15px;
+  padding: 20px;
   background-color: rgb(71, 76, 139);
   /* background-color: rgb(139, 71, 137); */
   font-family: 'Roboto', sans-serif;
@@ -9,8 +9,10 @@ body {
 }
 
 #main {
-  height: 92vh;
+  height: 85vh;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -136,6 +138,22 @@ hr {
 }
 
 /* buttons */
+.theme-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.theme-buttons > button {
+  width: 30px;
+  height: 30px;
+}
+#pink-theme {
+  background-color: rgb(201, 115, 193);
+}
+#blue-theme {
+  background-color: rgb(118, 115, 201);
+}
 button {
   border:unset;
   background-color: rgb(97, 90, 135);
