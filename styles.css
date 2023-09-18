@@ -1,8 +1,6 @@
 /* general */
 body {
   padding: 20px;
-  background-color: rgb(71, 76, 139);
-  /* background-color: rgb(139, 71, 137); */
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   text-align: center;
@@ -19,8 +17,6 @@ body {
 
 /* calculator-body */
 #calculator-box {
-  background-color: rgb(118, 115, 201);
-  /* background-color: rgb(201, 115, 193); */
   box-shadow: 5px 8px 20px rgba(61, 26, 60, 0.602);
   border-radius: 20px;
   padding: 30px 20px;
@@ -41,8 +37,6 @@ body {
   justify-content: space-between;
   border-radius: 20px;
   padding: 20px;
-  background-color: rgb(103, 101, 156);
-  /* background-color: rgba(156, 101, 151, 1); */
 }
 #close-history{
   color:rgb(255, 111, 111);
@@ -79,8 +73,6 @@ hr {
   border-radius: 20px;
   visibility: hidden;
   height: 0;
-  /* background-color: rgba(156, 101, 151, 0.85); */
-  background-color: rgba(101, 103, 156, 0.85);
 }
 .history-main {
   opacity: 0;
@@ -98,8 +90,6 @@ hr {
 }
 .history-main::-webkit-scrollbar {
   width: 10px;
-  background-color: rgb(81, 84, 120);
-  /* background-color: rgb(120, 81, 118); */
   border-radius: 6px;
 }
 
@@ -110,8 +100,6 @@ hr {
 
 /* display */
 #calculator-display {
-  background-color: rgb(103, 102, 115);
-  /* background-color: rgb(115, 102, 114); */
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -156,8 +144,6 @@ hr {
 }
 button {
   border:unset;
-  background-color: rgb(97, 90, 135);
-  /* background-color: rgb(135, 90, 133); */
   box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   font-weight: 700;
@@ -204,4 +190,54 @@ button.delete {
 }
 .history > img, .delete > img {
   width: 30px;
+}
+
+/* pink theme */
+#grid.pink > button, .history-buttons.pink > button {
+   background-color: rgb(135, 90, 133);
+}
+#calculator-display.pink{
+  background-color: rgb(115, 102, 114);
+}
+.history-main.pink::-webkit-scrollbar {
+  background-color: rgb(120, 81, 118);
+}
+#history-box.pink {
+  background-color: rgba(156, 101, 151, 0.85);
+}
+.history-wrapper.pink {
+  background-color: rgba(156, 101, 151, 1);
+}
+#calculator-box.pink {
+  background-color: rgb(201, 115, 193);
+}
+body.pink {
+  background-color: rgb(139, 71, 137);
+}
+button.on {
+  border: 2px solid  rgb(221, 221, 109);
+}
+
+
+/* blue theme */
+#grid.blue > button, .history-buttons.blue > button {
+  background-color: rgb(97, 90, 135);
+} 
+#calculator-display.blue {
+  background-color: rgb(103, 102, 115);
+}
+.history-main.blue::-webkit-scrollbar {
+  background-color: rgb(81, 84, 120);
+}
+#history-box.blue {
+  background-color: rgba(101, 103, 156, 0.85);
+}
+.history-wrapper.blue {
+  background-color: rgb(103, 101, 156);
+}
+#calculator-box.blue {
+  background-color: rgb(118, 115, 201);
+}
+body.blue {
+  background-color: rgb(71, 76, 139);
 }
