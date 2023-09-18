@@ -128,6 +128,8 @@ function calculateResult(num1, operator, num2) {
 function displayResult() {
   if (num1 !== "" && operator && currentNumber.innerText !== '') {
     num2 = currentNumber.innerText;
+    num1 = num1 === '.'? 0: num1;
+    num2 = num2 === '.'? 0: num2;
     result = calculateResult(num1, operator, num2);
     currentNumber.textContent = result;
     num1 = "";
@@ -160,6 +162,8 @@ function addOperator(event) {
     operator = operator ? operator : event.target.dataset.digit;
     if (num1 !== "" && currentNumber.innerText !== "") {
       num2 = currentNumber.innerText;
+      num1 = num1 === '.'? 0: num1;
+      num2 = num2 === '.'? 0: num2;
       result = calculateResult(num1, operator, num2);
       calculation.textContent = `${result} ${operator}`;
       num1 = result === "" ? num1 : result;
