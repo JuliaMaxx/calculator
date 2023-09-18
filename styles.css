@@ -96,7 +96,8 @@ hr {
 }
 .history-main::-webkit-scrollbar {
   width: 10px;
-  background-color: rgb(120, 81, 118);
+  background-color: rgb(81, 84, 120);
+  /* background-color: rgb(120, 81, 118); */
   border-radius: 6px;
 }
 
