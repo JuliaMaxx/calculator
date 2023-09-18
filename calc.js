@@ -19,6 +19,8 @@ const calculatorBox = document.getElementById('calculator-box');
 const closeHistoryBtn = document.getElementById('close-history');
 const deleteHistoryBtn = document.getElementById('delete-history');
 const historyMain = document.querySelector('.history-main');
+const pinkThemeBtn = document.getElementById('pink-theme');
+const blueThemeBtn = document.getElementById('blue-theme');
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
 let num1 = "";
@@ -266,6 +268,31 @@ function deleteHistory() {
     historyMain.style.opacity = 1;
   }, 600);
 }
+
+
+function changeToPink() {
+  const blueElements = document.querySelectorAll('.blue');
+  if (blueElements.length > 0) {
+    blueElements.forEach(element => {
+      element.classList.add('pink');
+      element.classList.remove('blue');
+    })
+  }
+  blueThemeBtn.classList.remove('on');
+  pinkThemeBtn.classList.add('on');
+}
+
+function changeToBlue() {
+  const pinkElements = document.querySelectorAll('.pink');
+  if (pinkElements.length > 0) {
+    pinkElements.forEach(element => {
+      element.classList.add('blue');
+      element.classList.remove('pink');
+    })
+  }
+  blueThemeBtn.classList.add('on');
+  pinkThemeBtn.classList.remove('on');
+}
  
 buttons.forEach(button => button.addEventListener('click', clearMessage));
 clearBtn.addEventListener("click", clearDisplay);
@@ -282,3 +309,5 @@ percent.addEventListener('click', calcPercent);
 history.addEventListener('click', showHistory)
 closeHistoryBtn.addEventListener('click', closeHistory);
 deleteHistoryBtn.addEventListener('click', deleteHistory);
+pinkThemeBtn.addEventListener("click", changeToPink);
+blueThemeBtn.addEventListener("click", changeToBlue);
