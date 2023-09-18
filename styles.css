@@ -22,7 +22,7 @@ body {
   border-radius: 20px;
   padding: 30px 20px;
   height: 500px;
-  width: 350px;
+  width: 340px;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -134,8 +134,8 @@ hr {
   margin-bottom: 10px;
 }
 .theme-buttons > button {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 #pink-theme {
   background-color: rgb(201, 115, 193);
