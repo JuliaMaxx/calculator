@@ -39,7 +39,7 @@ body {
   flex-direction: column;
   color: rgb(194, 194, 194);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 25px;
   justify-content: space-between;
   align-items: end;
   padding: 20px;
@@ -48,7 +48,7 @@ body {
 }
 
 .current-number {
-  font-size: 30px;
+  font-size: 33px;
 }
 
 /* grid */

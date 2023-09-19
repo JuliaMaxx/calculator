@@ -19,8 +19,8 @@
 }
 
 .theme-buttons > button {
-  width: 35px;
-  height: 35px;
+  width: 39px;
+  height: 39px;
 }
 
 button {
@@ -28,7 +28,7 @@ button {
   box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 29px;
   transition: all 0.125s;
 }
 
