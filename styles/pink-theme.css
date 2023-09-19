@@ -1,0 +1,33 @@
+/* pink theme */
+
+#pink-theme {
+  background-color: rgb(201, 115, 193);
+}
+
+#grid.pink > button, .history-buttons.pink > button {
+  background-color: rgb(135, 90, 133);
+}
+
+#calculator-display.pink{
+ background-color: rgb(115, 102, 114);
+}
+
+.history-main.pink::-webkit-scrollbar {
+ background-color: rgb(120, 81, 118);
+}
+
+#history-box.pink {
+ background-color: rgba(156, 101, 151, 0.85);
+}
+
+.history-wrapper.pink {
+ background-color: rgba(156, 101, 151, 1);
+}
+
+#calculator-box.pink {
+ background-color: rgb(201, 115, 193);
+}
+
+body.pink {
+ background-color: rgb(139, 71, 137);
+}

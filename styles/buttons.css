@@ -1,0 +1,62 @@
+/* buttons */
+
+#sound-switch {
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sound-switch.on {
+  border:none;
+}
+
+.theme-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.theme-buttons > button {
+  width: 35px;
+  height: 35px;
+}
+
+button {
+  border: unset;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 25px;
+  transition: all 0.125s;
+}
+
+.number {
+  color: rgb(221, 221, 109)
+}
+
+button.on {
+  border: 2px solid rgb(221, 221, 109);
+ }
+
+.other {
+  color: rgb(132, 183, 201);
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+button.operator {
+  color: rgb(129, 191, 105);
+}
+
+#grid > button.equal {
+  background-color: rgb(91, 135, 74) !important;
+  color: rgb(221, 221, 109) !important;
+}
+
+button.delete {
+  color: rgb(255, 111, 111)
+}

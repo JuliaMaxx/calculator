@@ -1,0 +1,77 @@
+/* general */
+
+body {
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+#main {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* calculator-body */
+#calculator-box {
+  box-shadow: 5px 8px 20px rgba(61, 26, 60, 0.602);
+  border-radius: 20px;
+  padding: 30px 20px;
+  height: 500px;
+  width: 340px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  gap: 30px;
+}
+
+/* display */
+#calculator-display {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(194, 194, 194);
+  font-weight: 700;
+  font-size: 20px;
+  justify-content: space-between;
+  align-items: end;
+  padding: 20px;
+  flex: 1;
+  box-shadow: inset 0 0 6px rgb(0, 0, 0);
+}
+
+.current-number {
+  font-size: 30px;
+}
+
+/* grid */
+#grid {
+  flex: 4;
+  gap: 7px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* message */
+#message {
+  color: rgb(255, 248, 107);
+  display: none;
+}
+
+/* icons */
+.with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history > img, .delete > img {
+  width: 30px;
+}

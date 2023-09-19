@@ -1,0 +1,33 @@
+/* orange theme */
+
+#orange-theme {
+  background-color: rgb(220, 162, 100);
+}
+
+#grid.orange > button, .history-buttons.orange > button {
+  background-color: rgb(151, 113, 75);
+} 
+
+#calculator-display.orange {
+  background-color: rgb(115, 110, 102);
+}
+
+.history-main.orange::-webkit-scrollbar {
+  background-color: rgb(120, 104, 81);
+}
+
+#history-box.orange {
+  background-color: rgba(156, 128, 101, 0.85);
+}
+
+.history-wrapper.orange {
+  background-color: rgb(156, 132, 101);
+}
+
+#calculator-box.orange {
+  background-color: rgb(220, 162, 100);
+}
+
+body.orange {
+  background-color: rgb(151, 121, 71);
+}
