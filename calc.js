@@ -11,7 +11,7 @@ const factorial = document.getElementById("factorial");
 const logarithm = document.getElementById("logarithm");
 const naturalLogarithm = document.getElementById("natural-logarithm");
 const message = document.getElementById("message");
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('#grid > button');
 const percent = document.getElementById('percent');
 const history = document.querySelector('.history');
 const historyBox = document.getElementById('history-box');
@@ -22,6 +22,7 @@ const historyMain = document.querySelector('.history-main');
 const pinkThemeBtn = document.getElementById('pink-theme');
 const blueThemeBtn = document.getElementById('blue-theme');
 const orangeThemeBtn = document.getElementById('orange-theme');
+const clickSound = document.getElementById('click-sound');
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
 let num1 = "";
@@ -332,6 +333,10 @@ function changeToOrange() {
   pinkThemeBtn.classList.remove('on');
   orangeThemeBtn.classList.add('on');
 }
+
+function playSound() {
+  clickSound.play()
+}
  
 buttons.forEach(button => button.addEventListener('click', clearMessage));
 clearBtn.addEventListener("click", clearDisplay);
@@ -351,3 +356,4 @@ deleteHistoryBtn.addEventListener('click', deleteHistory);
 pinkThemeBtn.addEventListener("click", changeToPink);
 blueThemeBtn.addEventListener("click", changeToBlue);
 orangeThemeBtn.addEventListener("click", changeToOrange);
+buttons.forEach(button => button.addEventListener('click', playSound))
