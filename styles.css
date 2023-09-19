@@ -127,6 +127,9 @@ hr {
 }
 
 /* buttons */
+#sound-switch.on {
+  border-color:red;
+}
 .theme-buttons {
   display: flex;
   justify-content: center;

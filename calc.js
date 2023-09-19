@@ -23,6 +23,7 @@ const pinkThemeBtn = document.getElementById('pink-theme');
 const blueThemeBtn = document.getElementById('blue-theme');
 const orangeThemeBtn = document.getElementById('orange-theme');
 const clickSound = document.getElementById('click-sound');
+const soundSwitch = document.getElementById('sound-switch');
 const maxDigits = 999999999999999;
 const minDigits = -999999999999999;
 let num1 = "";
@@ -337,6 +338,16 @@ function changeToOrange() {
 function playSound() {
   clickSound.play()
 }
+
+function toggleSound () {
+  soundSwitch.classList.toggle('on');
+  if (soundSwitch.classList.contains('on')){
+    buttons.forEach(button => button.addEventListener('click', playSound))
+  }
+  else {
+    buttons.forEach(button => button.removeEventListener('click', playSound))
+  }
+}
  
 buttons.forEach(button => button.addEventListener('click', clearMessage));
 clearBtn.addEventListener("click", clearDisplay);
@@ -356,4 +367,5 @@ deleteHistoryBtn.addEventListener('click', deleteHistory);
 pinkThemeBtn.addEventListener("click", changeToPink);
 blueThemeBtn.addEventListener("click", changeToBlue);
 orangeThemeBtn.addEventListener("click", changeToOrange);
+soundSwitch.addEventListener('click', toggleSound);
 buttons.forEach(button => button.addEventListener('click', playSound))
