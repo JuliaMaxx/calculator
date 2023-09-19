@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9 user-scalable=no">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="calculator_1325970.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,22 +15,21 @@
   <audio id="click-sound" preload="auto">
     <source src="click-21156.mp3" type="audio/mpeg">
   </audio>
-  <audio id="click-button-sound" preload="auto">
-    <source src="click-button-140881.mp3" type="audio/mpeg">
-  </audio>
   <div id="main">
     <div class="theme-buttons">
       <button id="pink-theme" class="on"></button>
       <button id="blue-theme"></button>
       <button id="orange-theme"></button>
-      <button id="sound-switch" class="on"><img src="icons8-sound-32 (1).png"></button>
+      <button id="sound-switch" class="on">
+        <img src="icons8-sound-32 (1).png"></button>
     </div>
     <div id="calculator-box" class="pink">
       <div id="history-box" class="pink">
         <div class="history-wrapper pink">
           <div class="history-heading">History</div>
           <div class="history-buttons pink">
-            <button id="delete-history"><img src="icons8-garbage-24.png"></button>
+            <button id="delete-history">
+              <img src="icons8-garbage-24.png"></button>
             <button id="close-history">X</button>
           </div>
         </div>
@@ -52,22 +51,22 @@
         <button id="square-root" data-digit="√" class="other">√</button>
         <button id="factorial" data-digit="!" class="other">!</button>
         <button id="percent" data-digit="%" class="other">%</button>
-        <button data-digit="÷" class="btn operator">÷</button>
-        <button data-digit="7" class="btn number">7</button>
-        <button data-digit="8" class="btn number">8</button>
-        <button data-digit="9" class="btn number">9</button>
-        <button data-digit="x" class="btn operator">x</button>
-        <button data-digit="4" class="btn number">4</button>
-        <button data-digit="5" class="btn number">5</button>
-        <button data-digit="6" class="btn number">6</button>
-        <button data-digit="-" class="btn operator">-</button>
-        <button data-digit="1" class="btn number">1</button>
-        <button data-digit="2" class="btn number">2</button>
-        <button data-digit="3" class="btn number">3</button>
-        <button data-digit="+" class="btn operator">+</button>
+        <button data-digit="÷" class="operator">÷</button>
+        <button data-digit="7" class="number">7</button>
+        <button data-digit="8" class="number">8</button>
+        <button data-digit="9" class="number">9</button>
+        <button data-digit="x" class="operator">x</button>
+        <button data-digit="4" class="number">4</button>
+        <button data-digit="5" class="number">5</button>
+        <button data-digit="6" class="number">6</button>
+        <button data-digit="-" class="operator">-</button>
+        <button data-digit="1" class="number">1</button>
+        <button data-digit="2" class="number">2</button>
+        <button data-digit="3" class="number">3</button>
+        <button data-digit="+" class="operator">+</button>
         <button class="sign other">+/-</button>
-        <button data-digit="0" class="btn number">0</button>
-        <button data-digit="." class="btn number">.</button>
+        <button data-digit="0" class="number">0</button>
+        <button data-digit="." class="number">.</button>
         <button class="equal">=</button>
         <button data-digit="3.14159" class="other number">π</button>
         <button data-digit="2.71828" class="other number">e</button>
