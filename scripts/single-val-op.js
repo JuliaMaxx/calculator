@@ -87,10 +87,10 @@ function calcPercent() {
   if (number !== "" && number !== ".") {
     number = +number;
     if (num1 && (operator === '+' || operator === '-')){
-      currentNumber.innerText = num1*number/100
+      currentNumber.innerText = Math.round((num1*number/100) * 10 ** 9) / 10 ** 9
     }
     else{
-      currentNumber.innerText = number/100
+        currentNumber.innerText = Math.round((number/100) * 10 ** 9) / 10 ** 9
     }
   }
 }

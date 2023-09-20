@@ -100,7 +100,7 @@ function calculateResult(num1, operator, num2) {
     displayMessage( 'Number too long');
   }
   if (+num2 === 0 && operator === "÷") {
-    displayMessage('Division by 0 not allowed :(');
+    displayMessage('Division by 0 not allowed');
   }
   if (result !== ''){
     const newDiv = document.createElement('div');
