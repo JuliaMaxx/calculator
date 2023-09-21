@@ -18,6 +18,7 @@
   <script src="scripts/themes.js" defer></script>
   <script src="scripts/history.js" defer></script>
   <script src="scripts/sound.js"defer></script>
+  <script src="scripts/keyboard.js"defer></script>
   <title>Calculator</title>
 </head>
 <body class="pink">
@@ -51,36 +52,36 @@
         <div id="message"></div>
       </div>
       <div id="grid" class="pink">
-        <button id="delete" class="delete with-icon">
+        <button id="delete" data-key="Backspace" class="delete with-icon">
           <img src="icons/icons8-backspace-50 (2).png"></button>
-        <button id="clear" class="delete">C</button>
-        <button class="history with-icon">
+        <button id="clear" data-key="c" class="delete">C</button>
+        <button data-key="h" class="history with-icon">
           <img src="icons/icons8-history-48.png"></button>
-        <button data-digit="^" class="operator">x<sup>y</sup></button>
-        <button id="square-root" data-digit="√" class="other">√</button>
-        <button id="factorial" data-digit="!" class="other">!</button>
-        <button id="percent" data-digit="%" class="other">%</button>
-        <button data-digit="÷" class="operator">÷</button>
-        <button data-digit="7" class="number">7</button>
-        <button data-digit="8" class="number">8</button>
-        <button data-digit="9" class="number">9</button>
-        <button data-digit="x" class="operator">x</button>
-        <button data-digit="4" class="number">4</button>
-        <button data-digit="5" class="number">5</button>
-        <button data-digit="6" class="number">6</button>
-        <button data-digit="-" class="operator">-</button>
-        <button data-digit="1" class="number">1</button>
-        <button data-digit="2" class="number">2</button>
-        <button data-digit="3" class="number">3</button>
-        <button data-digit="+" class="operator">+</button>
-        <button class="sign other">+/-</button>
-        <button data-digit="0" class="number">0</button>
-        <button data-digit="." class="number">.</button>
-        <button class="equal">=</button>
-        <button data-digit="3.14159" class="other number">π</button>
-        <button data-digit="2.71828" class="other number">e</button>
-        <button id="logarithm" data-digit="log" class="other">log</button>
-        <button id="natural-logarithm" data-digit="ln" class="other">ln</button>
+        <button data-key="^" data-digit="^" class="operator">x<sup>y</sup></button>
+        <button data-key="r" id="square-root" data-digit="√" class="other">√</button>
+        <button data-key="!" id="factorial" data-digit="!" class="other">!</button>
+        <button data-key="%" id="percent" data-digit="%" class="other">%</button>
+        <button data-key="/" data-digit="÷" class="operator">÷</button>
+        <button data-key="7" data-digit="7" class="number">7</button>
+        <button data-key="8" data-digit="8" class="number">8</button>
+        <button data-key="9" data-digit="9" class="number">9</button>
+        <button data-key="x" data-digit="x" class="operator">x</button>
+        <button data-key="4" data-digit="4" class="number">4</button>
+        <button data-key="5" data-digit="5" class="number">5</button>
+        <button data-key="6" data-digit="6" class="number">6</button>
+        <button data-key="-" data-digit="-" class="operator">-</button>
+        <button data-key="1" data-digit="1" class="number">1</button>
+        <button data-key="2" data-digit="2" class="number">2</button>
+        <button data-key="3" data-digit="3" class="number">3</button>
+        <button data-key="+" data-digit="+" class="operator">+</button>
+        <button data-key="s" class="sign other">+/-</button>
+        <button data-key="0" data-digit="0" class="number">0</button>
+        <button data-key="." data-digit="." class="number">.</button>
+        <button data-key="=" class="equal">=</button>
+        <button data-key="p" data-digit="3.14159" class="other number">π</button>
+        <button data-key="e" data-digit="2.71828" class="other number">e</button>
+        <button data-key="l" id="logarithm" data-digit="log" class="other">log</button>
+        <button data-key="n" id="natural-logarithm" data-digit="ln" class="other">ln</button>
       </div>
     </div>
   </div>
