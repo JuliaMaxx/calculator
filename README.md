@@ -59,6 +59,7 @@
   - `r` for **√**
   - `h` for **history**
   - `^` for **power**
+  - `s` for **+/-**
 - calculator has `blue`, `pink` and `orange` color themes
 - buttons on calculator can be `with or without sound` (changes by sound toggle button)
 - website works well in both mobile and desktop versions
