@@ -1,6 +1,6 @@
 # Calculator
 ## Live Preview: https://juliamaxx.github.io/calculator/
-### Description: pretty calculator with sound effect and three color themes
+### Description: pretty calculator with sound effect and three color themes and keyboard support
 ### Features: 
 - calculator consists of `dsiplay` and `buttons` to make calculations on it
 - `numeric` buttons
@@ -50,6 +50,15 @@
 - all the calculations are saved in `history`
     - history is opened with the corresponding button
     - history can be **cleared**
+- calculator has `keyboard support`:
+  - **numbers + - = ! % c . backspace and e** correspond to their keys
+  - `/` for **÷**
+  - `p` for **π**
+  - `n` for **ln**
+  - `l` for **log**
+  - `r` for **√**
+  - `h` for **history**
+  - `^` for **power**
 - calculator has `blue`, `pink` and `orange` color themes
 - buttons on calculator can be `with or without sound` (changes by sound toggle button)
 - website works well in both mobile and desktop versions
