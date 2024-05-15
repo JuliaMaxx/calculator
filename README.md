@@ -1,7 +1,7 @@
 # Calculator
 ## Live Preview: https://juliamaxx.github.io/calculator/
 ### Description: pretty calculator with sound effect and three color themes and keyboard support
-![image](https://github.com/JuliaMaxx/calculator/assets/121096183/fe697ea1-b8e5-479d-88d7-101bb9a41cc4)
+![image](https://github.com/JuliaMaxx/calculator/assets/121096183/3b989abe-b553-4a0d-9963-f81493a6f09f)
 
 ## Overview
 This calculator application offers a comprehensive set of features to simplify your mathematical computations. With an intuitive interface and support for both keyboard and button inputs, it's designed to meet your calculation needs efficiently.
