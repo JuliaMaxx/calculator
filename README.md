@@ -29,3 +29,4 @@ This calculator application offers a comprehensive set of features to simplify y
 2. Use two-value operators to chain calculations seamlessly.
 3. Access previous calculations and clear history as needed.
 4. Enjoy the convenience of a user-friendly interface and efficient computation.
+5. Works on mobile too ;)
