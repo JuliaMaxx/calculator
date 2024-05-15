@@ -1,65 +1,31 @@
 # Calculator
 ## Live Preview: https://juliamaxx.github.io/calculator/
 ### Description: pretty calculator with sound effect and three color themes and keyboard support
-### Features: 
-- calculator consists of `dsiplay` and `buttons` to make calculations on it
-- `numeric` buttons
-  - numbers `0-9`
-  - `π` that is calculated as **3.14159**
-  - `e` that is calculated as **2.71828**
-  - **π** and **e** are treated **as numbers**, on click, their values are appended to the end of your input
-- `two-value operators`:
-  - addition `+`
-  - subtraction `-`
-  - division `÷`
-  - multiplication `x`
-  - power `^`
-  - **two values** must be surrounding the operator
-- `one-value operators`:
-  - square root `√`
-  - factorial `!` (up to 17)
-  - percentage `%`
-    -  if there is no other operator, divides current number by 100
-      
-    - if multiplication or division is current operator uses second number
-    for percentage calculation
-    
-    - if addition or subtraction is current operator uses first number
-    for percentage calculation, thus making calculation more convenient
-    
-    ##### Example:
-    - 10 - 50% = 5, 50% of 10 is 5, 10 - 5 = 5
-    - 10 * 20% = 2, 20% = 0.2, 0.2 * 10 = 2
-  - sign changer `+/-` changes sign to the opposite one
-  - logaritm base 10 `log`
-  - natural logaritm `ln`
-  - should be used **after** number has been inputed
-  - perform operation **instantly** on currently inputed number
-- `.` allows you to make calculations on `decimal point values`
-- long decimal numbers are **rounded**
-- calculation can be `finished` by:
-  - pressing `=`
-  - chaining another calculation by pressing any `two-value operators`
-- clear or `C` wipes out both current number and a calculation
-- `backspace` button allows to delete **one digit at a time** from currenty inputed number
-- user `cannot`:
-    - divide by 0
-    - calculate **√**, **!**, **log** or **ln** of negative number
-    - have two dots in a number
-    - input/make calculations on numbers that are longer than **15** digits
-- all the calculations are saved in `history`
-    - history is opened with the corresponding button
-    - history can be **cleared**
-- calculator has `keyboard support`:
-  - **numbers + - = ! % c . backspace and e** correspond to their keys
-  - `/` for **÷**
-  - `p` for **π**
-  - `n` for **ln**
-  - `l` for **log**
-  - `r` for **√**
-  - `h` for **history**
-  - `^` for **power**
-  - `s` for **+/-**
-- calculator has `blue`, `pink` and `orange` color themes
-- buttons on calculator can be `with or without sound` (changes by sound toggle button)
-- website works well in both mobile and desktop versions
+![image](https://github.com/JuliaMaxx/calculator/assets/121096183/fe697ea1-b8e5-479d-88d7-101bb9a41cc4)
+
+## Overview
+This calculator application offers a comprehensive set of features to simplify your mathematical computations. With an intuitive interface and support for both keyboard and button inputs, it's designed to meet your calculation needs efficiently.
+
+### Basic Operations
+- **Numeric Buttons**: Input numbers `0-9`, π `3.14159`, and e `2.71828`.
+- **Two-Value Operators**: Addition `+`, Subtraction `-`, Division `÷`, Multiplication `x`, Power `^`.
+- **One-Value Operators**: Square Root `√`, Factorial `!`, Percentage `%`, Sign Changer `+/-`, Logarithm Base 10 `log`, Natural Logarithm `ln`.
+- **Decimal Point**: Perform calculations with decimal point values.
+- **Rounded Results**: Long decimal numbers are rounded for easier reading.
+- **Error Prevention**: Prevents division by zero, negative input for certain operations, and limits digits to 15 for clarity.
+
+### Input Handling
+- **Chain Calculations**: Use two-value operators to chain calculations without pressing `=`.
+- **Backspace**: Delete digits one at a time for precise input adjustments.
+- **Keyboard Support**: Corresponding keyboard keys facilitate quick input and operation execution.
+
+### Additional Functionality
+- **Color Themes**: Choose from blue, pink, or orange themes for personalized aesthetics.
+- **Sound Toggle**: Enable or disable button click sounds as per preference.
+- **History**: Access previous calculations conveniently and clear history when needed.
+
+### Usage
+1. Input numbers and perform calculations using the provided buttons or keyboard shortcuts.
+2. Use two-value operators to chain calculations seamlessly.
+3. Access previous calculations and clear history as needed.
+4. Enjoy the convenience of a user-friendly interface and efficient computation.
